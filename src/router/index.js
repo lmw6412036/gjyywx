@@ -18,9 +18,9 @@ export default new Router({
       }
     }
     , {
-      path: '/user',
+      path: '/user/reg',
       component: resolve => {
-        require(['../pages/ucenter/index.vue'], resolve)
+        require(['../pages/ucenter/register/index.vue'], resolve)
       }
     }
     , {

@@ -4,7 +4,22 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    data() {
+      return {
+
+      };
+    },
+    mounted() {
+
+    },
+    beforeDestroy() {
+
+    },
+    methods: {
+
+    }
+  };
 </script>
 
 <style scoped lang="scss">
