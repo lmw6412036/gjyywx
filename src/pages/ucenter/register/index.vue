@@ -29,12 +29,10 @@
       console.log(this.$v)
     },
     beforeDestroy() {
-
     },
     methods: {}
   };
 </script>
 
 <style scoped lang="scss">
-
 </style>

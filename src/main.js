@@ -33,14 +33,6 @@ if (window.device == "iphone" || window.device == "android") {
  * 全局bus
  * */
 window.bus = new Vue();
-bus.$on("loading", (res) => {
-  /*if (res.status == "start") {
-    document.querySelector('.loading').style.display = "block";
-  }
-  if (res.status == "stop") {
-    document.querySelector('.loading').style.display = "none";
-  }*/
-})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
