@@ -2,6 +2,8 @@
 
 > gjyywx
 
+[中文文档](https://github.com/lmw6412036/gjyywx/wiki)
+
 ## Build Setup
 
 ``` bash
