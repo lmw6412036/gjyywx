@@ -3,8 +3,10 @@ import Router from 'vue-router'
 import Consult from '../pages/consult/router'
 import News from '../pages/news/router'
 import Service from '../pages/service/router'
+import User from "../pages/ucenter/router"
 
 Vue.use(Router)
+
 
 export default new Router({
   routes: [
@@ -16,6 +18,7 @@ export default new Router({
     },
     ...Consult,
     ...Service,
-    ...News
+    ...News,
+    ...User
   ]
 })
