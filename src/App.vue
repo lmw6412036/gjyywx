@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    {{t}}
+    <a @click="tt">修改</a>
     <router-view></router-view>
     <toast v-show="loading" type="loading">加载中...</toast>
     <toast v-show="toast" type="icon">{{toastText}}</toast>
@@ -21,12 +23,14 @@
         tytoastText: ""
       }
     },
+    computed: {
+      t(){
+        return this.$store.state.news.t;
+      }
+    },
     components: {Toast, Tytoast},
     mounted(){
-      setTimeout((res) => {
-        this.tytoast = true;
-      }, 3000)
-
+      console.log(this.$store)
       bus.$on('loading', (res) => {
         if (res.status == "start") {
           this.loading = true;
@@ -53,12 +57,17 @@
           }, 3000);
         }
       },
-      tytoast:function (res) {
+      tytoast: function (res) {
         if (res == true) {
           setTimeout(() => {
             this.tytoast = false;
           }, 3000);
         }
+      }
+    },
+    methods: {
+      tt(){
+        this.$store.dispatch("news_t", 2)
       }
     }
   }

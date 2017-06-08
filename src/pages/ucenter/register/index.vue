@@ -1,18 +1,21 @@
 <template>
   <div>
-    注册
-    <input type="text" v-model="fdata.tel" name="email">
-    {{$v.fdata.tel.required}}
-    {{fdata.tel}}
+    <cells>
+      <input-cell @inputcell="input" :value="fdata.tel" label="姓名"></input-cell>
+    </cells>
     <pre>{{$v}}</pre>
   </div>
 </template>
 
 <script>
+  import Cells from "vue-weui/components/cells/cells.vue"
+  import InputCell from "vue-weui/components/cells/input-cell.vue"
   import {required, email} from "vuelidate/lib/validators";
   import regex from "../../../lib/vuelidate/regex"
   export default {
-    components: {},
+    components: {
+        Cells,InputCell
+    },
     data() {
       return {
         fdata: {
@@ -30,11 +33,18 @@
       }
     },
     mounted() {
+        this.$on('input_cell',(res)=>{
+            console.log("on",res);
+        });
       //console.log(this.$v)
     },
     beforeDestroy() {
     },
-    methods: {}
+    methods: {
+        input(res){
+            console.log("on1",res);
+        }
+    }
   };
 </script>
 
