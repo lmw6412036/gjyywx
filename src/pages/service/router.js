@@ -2,11 +2,11 @@
  * Created by Administrator on 2017/6/5 0005.
  */
 export default [{
-    path: '/service/book',
-    component: resolve => {
-      require(['./book/index.vue'], resolve)
-    }
+  path: '/service/book',
+  component: resolve => {
+    require(['./book/index.vue'], resolve)
   }
+}
   , {
     path: '/service/paidui',
     component: resolve => {

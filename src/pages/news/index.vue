@@ -10,12 +10,12 @@
       return {}
     },
     mounted(){
-        api("nethos.system.information.type.list",{})
-          .then((res)=>{
-              console.log(res);
-              bus.$emit('tytoast',{toast:true,text:'加载成功'});
-              bus.$emit("toast",{toast:true,text:'加载成功'})
-          });
+      api("nethos.system.information.type.list", {})
+        .then((res) => {
+          console.log(res);
+          bus.$emit('tytoast', {toast: true, text: '加载成功'});
+          bus.$emit("toast", {toast: true, text: '加载成功'})
+        });
     }
 
   }

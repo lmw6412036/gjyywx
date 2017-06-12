@@ -26,7 +26,6 @@ if (params.length > 1) {
     let tplContent = fs.readFileSync(tpl, "utf8");
     try {
       fs.writeFileSync(file, tplContent, {flag: "wx"});
-
       if (params[2]) {
         let component = (path.relative(path.join(__dirname, './src/router/'), file));
         let routerjs = fs.readFileSync(path.join(__dirname, './src/router/index.js'), "utf8");

@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    {{t}}
-    <a @click="tt">修改</a>
+    <app-header>
+      <div class="middle">标题</div>
+    </app-header>
     <router-view></router-view>
-    <toast v-show="loading" type="loading">加载中...</toast>
-    <toast v-show="toast" type="icon">{{toastText}}</toast>
     <tytoast v-bind:class="{show:tytoast}">{{tytoastText}}</tytoast>
   </div>
 </template>
 
 <script>
   import {Toast} from 'vue-weui';
-  import Tytoast from "./components/toast.vue"
+  import AppHeader from './components/business/app-header.vue'
+  import Tytoast from "./components/ui/toast.vue"
   export default {
     name: 'app',
     data(){
@@ -28,9 +28,9 @@
         return this.$store.state.news.t;
       }
     },
-    components: {Toast, Tytoast},
+    components: {Toast, Tytoast, AppHeader},
     mounted(){
-      console.log(this.$store)
+      console.log(this.$store.getters);
       bus.$on('loading', (res) => {
         if (res.status == "start") {
           this.loading = true;
@@ -38,12 +38,10 @@
           this.loading = false;
         }
       });
-
       bus.$on('toast', (res) => {
         this.toast = res.toast;
         this.toastText = res.text;
       });
-
       bus.$on('tytoast', (res) => {
         this.tytoast = res.toast;
         this.tytoastText = res.text;
@@ -79,7 +77,20 @@
     padding: 0;
     box-sizing: border-box;
   }
-
+  #app{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    >.view{
+      overflow: hidden;
+      flex: 1;
+  }
+  }
   .loading {
     display: none;
     width: 10rem;

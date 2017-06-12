@@ -14,10 +14,11 @@
   import regex from "../../../lib/vuelidate/regex"
   export default {
     components: {
-        Cells,InputCell
+      Cells, InputCell
     },
     data() {
       return {
+        text: "text",
         fdata: {
           tel: "13"
         }
@@ -28,22 +29,22 @@
         tel: {
           email,
           required,
-          regex:regex("ldldl")
+          regex: regex("ldldl")
         }
       }
     },
     mounted() {
-        this.$on('input_cell',(res)=>{
-            console.log("on",res);
-        });
+      this.$on('input_cell', (res) => {
+        console.log("on", res);
+      });
       //console.log(this.$v)
     },
     beforeDestroy() {
     },
     methods: {
-        input(res){
-            console.log("on1",res);
-        }
+      input(res){
+        console.log("on1", res);
+      }
     }
   };
 </script>

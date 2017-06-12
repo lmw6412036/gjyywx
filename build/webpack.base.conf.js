@@ -22,7 +22,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'iscroll':path.join(__dirname,"..",'src/lib/iscroll/iscroll-probe.js'),
+      'swiper':path.join(__dirname,'..','src/lib/swiper/swiper-3.4.2.min.js')
     }
   },
   module: {
