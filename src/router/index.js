@@ -4,21 +4,20 @@ import Consult from '../pages/consult/router'
 import News from '../pages/news/router'
 import Service from '../pages/service/router'
 import User from "../pages/ucenter/router"
+import Tab from "../pages/tab/router"
 
 Vue.use(Router)
 
-
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      component: resolve => {
-        require(['../pages/index.vue'], resolve)
-      }
-    },
-    ...Consult,
-    ...Service,
-    ...News,
-    ...User
-  ]
+    routes: [
+        {
+            path: '/',
+            redirect:"/tab"
+        },
+        ...Consult,
+        ...Service,
+        ...News,
+        ...User,
+        ...Tab
+    ]
 })

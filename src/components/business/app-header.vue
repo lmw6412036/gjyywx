@@ -3,9 +3,7 @@
     <slot name="left">
       <div class="left"><font></font>返回</div>
     </slot>
-    <slot>
-
-    </slot>
+    <slot></slot>
     <slot name="right">
       <div class="right">右边</div>
     </slot>
@@ -31,13 +29,14 @@
 </script>
 
 <style scoped lang="scss">
-  $w:2.4rem;
+  $w:45px;
   header{
     position: relative;
-    line-height: $w;
+    height: 45px;
+    line-height: 45px;
     display: flex;
-    border-bottom: 1px solid #d1d1d5;
     >.left,.right{
+      text-align: center;
       width: $w;
     }
     div:nth-child(2){

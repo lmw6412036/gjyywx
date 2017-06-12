@@ -1,0 +1,37 @@
+@import "font";
+
+* {
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+
+/******class******/
+.tac{
+  text-align: center;
+}
+.tal{
+  text-align: left;
+}
+.tar{
+  text-align: right;
+}
+
+/******字体大小设置******/
+$fontZize: (
+        smaller: .625rem,
+        small:.75rem,
+        normal:.875rem,
+        big:1rem,
+        bigger:1.125rem
+);
+
+@each $key,$value in $fontZize{
+  .#{$key}{
+    font-size: $value;
+  }
+}
