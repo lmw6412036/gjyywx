@@ -25,10 +25,16 @@ let config = {
 }
 
 export default function (service, options) {
-  bus.$emit("loading",{status:'start'});
+  if (typeof options.showloading == "undefined") {
+    options.showloading = true;
+  }
+  if (options.showloading) {
+    bus.$emit("loading", {status: 'start'});
+  }
+  bus.$emit("loading", {status: 'start'});
   return axios.post(url, {...base, ...options, service}, config)
     .then((res) => {
-      bus.$emit("loading",{status:'stop'});
+      bus.$emit("loading", {status: 'stop'});
       if (res.status == 200) {
         return res.data;
       } else {
