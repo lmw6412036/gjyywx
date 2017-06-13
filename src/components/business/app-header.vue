@@ -1,11 +1,11 @@
 <template>
   <header>
     <slot name="left">
-      <div class="left"><font></font>返回</div>
+      <div class="left"><font></font></div>
     </slot>
     <slot></slot>
     <slot name="right">
-      <div class="right">右边</div>
+      <div class="right"></div>
     </slot>
   </header>
 </template>
@@ -34,6 +34,7 @@
     position: relative;
     height: 45px;
     line-height: 45px;
+    background-color: white;
     display: flex;
     >.left,.right{
       text-align: center;

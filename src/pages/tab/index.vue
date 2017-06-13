@@ -1,33 +1,34 @@
 <template>
-    <div class="tab">
-        <router-view></router-view>
-        <app-footer></app-footer>
-    </div>
+  <div class="viewpage view">
+    <router-view></router-view>
+    <app-footer></app-footer>
+  </div>
 </template>
 
 <script>
-    import AppFooter from "../../components/business/app-footer.vue"
-    export default {
-        data() {
-            return {};
-        },
-        computed: {},
-        components: {
-            AppFooter
-        },
-        mounted() {
+  import AppHeader from "../../components/business/app-header.vue"
+  import AppFooter from "../../components/business/app-footer.vue"
+  export default {
+    data() {
+      return {};
+    },
+    computed: {},
+    components: {
+      AppHeader, AppFooter
+    },
+    mounted() {
 
-        },
-        beforeDestroy() {
+    },
+    beforeDestroy() {
 
-        },
-        methods: {}
-    };
+    },
+    methods: {}
+  };
 </script>
 
 <style scoped lang="scss">
-    .tab{
-        display: flex;
-        flex-direction: column;
-    }
+  .tab {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

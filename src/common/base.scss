@@ -1,7 +1,7 @@
 @import "font";
 
 * {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,9 +29,21 @@ $fontZize: (
         big:1rem,
         bigger:1.125rem
 );
-
 @each $key,$value in $fontZize{
   .#{$key}{
     font-size: $value;
   }
 }
+
+/******字体颜色设置******/
+$colors:(
+  main:#09BB07,
+  bg:#f0f0f0,
+  border:#d1d1d1
+);
+@each $k,$v in $colors{
+  .color-#{$k}{
+    color: $v;
+  }
+}
+

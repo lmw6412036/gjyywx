@@ -12,7 +12,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            redirect:"/tab"
+            redirect:"/tab/news"
         },
         ...Consult,
         ...Service,

@@ -5,6 +5,11 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 
+import "weui/dist/style/weui.min.css"
+
+import Bus from "./lib/bus"
+Vue.use(Bus)
+
 import "babel-polyfill";
 
 Vue.config.productionTip = false
@@ -20,6 +25,12 @@ if (/micromessenger/.test(UA)) {
   window.brower = "weixin";
 }
 /*
+* 全局bus
+* */
+//window.bus=new Vue();
+
+
+/*
  * 移动端rem布局
  * width:20rem
  * */
@@ -28,10 +39,6 @@ if (window.device == "iphone" || window.device == "android") {
   document.querySelector('html').style.fontSize = (w / 20) + "px";
 }
 
-/*
- * 全局bus
- * */
-window.bus = new Vue();
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
