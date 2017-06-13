@@ -33,6 +33,19 @@
           Api("a",{})
             .then((res)=>{
                 console.log(res);
+                setTimeout(()=>{
+                    this.$bus.$emit("toast",{
+                        text:"加载成功",
+                        time:5000
+                    });
+                },1000)
+
+                setTimeout(()=>{
+                    this.$bus.$emit("toast",{
+                        text:"加载成功2",
+                        time:5000
+                    });
+                },10000)
             });
         },
         pulldown(){
