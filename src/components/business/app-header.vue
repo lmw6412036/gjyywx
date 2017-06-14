@@ -1,7 +1,7 @@
 <template>
   <header>
     <slot name="left">
-      <div class="left"><font></font></div>
+      <div class="left"><font>返回</font></div>
     </slot>
     <slot></slot>
     <slot name="right">

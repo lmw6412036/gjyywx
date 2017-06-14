@@ -47,3 +47,10 @@ $colors:(
   }
 }
 
+/******定位******/
+$position:fixed,relative,absolute;
+@each $p in $position{
+  .#{$p}{
+    position: $p;
+  }
+}

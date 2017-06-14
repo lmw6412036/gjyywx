@@ -3,10 +3,12 @@
         <router-view></router-view>
         <loading :show="loadingshow" :text="loadingtext"></loading>
         <toast :time="toasttime" :show="toastshow" :text="toasttext"></toast>
+        <msg :text="msgtext" :show="msgshow" :time="msgtime"></msg>
     </div>
 </template>
 
 <script>
+    import Msg from "./components/ui/msg.vue"
     import Toast from "./components/ui/toast.vue"
     import Loading from "./components/ui/loading.vue"
     export default {
@@ -17,11 +19,13 @@
                 loadingtext: "数据加载中...",
                 toasttext: "成功",
                 toastshow: false,
-                toasttime: 3000
+                toasttime: 3000,
+                msgtext:"消息通知",
+                msgshow:false
             }
         },
         computed: {},
-        components: {Loading, Toast},
+        components: {Loading, Toast,Msg},
         mounted(){
             //console.log(this.$bus)
             this.$bus.$on('loading', (res) => {
@@ -49,6 +53,11 @@
             this.$bus.$on("toasthide", (res) => {
                 this.toastshow=false;
             })
+
+            setTimeout(() => {
+                this.msgshow=true;
+                this.msgtext="测试消息"
+            },5000)
 
         },
         watch: {},
