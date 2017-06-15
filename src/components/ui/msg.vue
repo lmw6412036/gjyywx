@@ -26,9 +26,6 @@
                 get(){
                     this._show(this.show);
                     return this.show
-                },
-                set(value){
-                    console.log('set', value)
                 }
             }
         },
@@ -39,11 +36,13 @@
         },
         methods: {
             _show(value){
-                console.log("kdkdk", value)
                 if (value) {
-                    console.log(Dom.hasClass(this.$refs.msg,'tac'))
+                    setTimeout((res)=>{
+                      Dom.addClass(this.$refs.msg,'show');
+                    },20)
                     setTimeout(() => {
-                        console.log("定时")
+                      Dom.removeClass(this.$refs.msg,'show');
+                      this.$bus.$emit("msg:hide",true)
                     }, this.time)
                 }
             }
@@ -59,10 +58,10 @@
         right: 0;
         z-index: 20170000;
         opacity: 0;
-        transition: all 3s;
+        transition: all 0.2s;
         &.show {
             opacity: 1;
-            bottom: 4rem;
+            bottom: 5rem;
         }
         span {
             border-radius: .5rem;

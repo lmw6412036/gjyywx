@@ -4,15 +4,32 @@
 let hasClass=(dom,name) => {
     if(dom){
         let reg=new RegExp(name+"(\s|$)",'g')
-        console.log('reg',reg)
         return reg.test(dom.className)
+    }
+    return false;
+}
+
+let addClass=(dom,name)=>{
+  if(!dom){
+    return
+  }
+  if(!hasClass(dom,name)){
+      let arr=dom.className.split(" ");
+      arr.push(name);
+      dom.className=arr.join(" ");
     }
 }
 
-
-
-
+let removeClass=(dom,name)=>{
+    if(!dom){
+      return
+    }
+    if(hasClass(dom,name)){
+      let reg=new RegExp(name+"(\s|$)",'g')
+      dom.className=dom.className.replace(reg,'');
+    }
+}
 
 export default {
-    hasClass
+    hasClass,addClass,removeClass
 }
