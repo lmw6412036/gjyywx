@@ -38,8 +38,8 @@ $fontZize: (
 /******字体颜色设置******/
 $colors:(
   main:#09BB07,
-  bg:#f0f0f0,
-  border:#d1d1d1
+  bg:#f8f8f8,
+  border:#e5e5e5
 );
 @each $k,$v in $colors{
   .color-#{$k}{

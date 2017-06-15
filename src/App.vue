@@ -75,7 +75,6 @@
 
 <style lang="scss">
   @import "common/base";
-
   #app {
     position: fixed;
     background-color: map_get($colors, bg);
@@ -84,6 +83,7 @@
     top: 0;
     bottom: 0;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     .view {
       flex: 1;
