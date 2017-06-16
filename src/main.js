@@ -8,7 +8,9 @@ import store from './store/index'
 import "weui/dist/style/weui.min.css"
 
 import Bus from "./lib/bus"
+import Directive from "./lib/directive"
 Vue.use(Bus)
+Vue.use(Directive)
 
 import "babel-polyfill";
 

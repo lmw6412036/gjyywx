@@ -1,72 +1,29 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <loading :show="loadingshow" :text="loadingtext"></loading>
-    <toast :time="toasttime" :show="toastshow" :text="toasttext"></toast>
-    <msg :text="msgtext" :show="msgshow" :time="msgtime"></msg>
+    <toast ref="toast" @toast:hide="show=false" :show="show" text="成功"></toast>
   </div>
 </template>
 
 <script>
-  import Msg from "./components/ui/msg.vue"
-  import Toast from "./components/ui/toast.vue"
-  import Loading from "./components/ui/loading.vue"
+  //import WeuiForVue from "weui-for-vue"
+  import {Msg, Loading, Toast} from "weui-for-vue"
+
   export default {
     name: 'app',
     data(){
       return {
-        loadingshow: false,
-        loadingtext: "数据加载中...",
-        toasttext: "成功",
-        toastshow: false,
-        toasttime: 3000,
-        msgtext: "消息通知",
-        msgshow: false
+        show: true
       }
     },
     computed: {},
-    components: {Loading, Toast, Msg},
+    components: {
+      Msg, Loading, Toast
+    },
     mounted(){
-      //console.log(this.$bus)
-      this.$bus.$on('loading', (res) => {
-        if (res.status == "start") {
-          this.loadingshow = true;
-        }
-        if (res.status == "stop") {
-          this.loadingshow = false;
-        }
-      });
-
-      //
-      this.$bus.$on("toast", (res) => {
-        console.log('toast', res);
-
-        if (res.text) {
-          this.toastshow = true;
-          this.toasttext = res.text;
-        }
-        if (res.time) {
-          this.toasttime = res.time;
-        }
-      })
-
-      this.$bus.$on("toasthide", (res) => {
-        this.toastshow = false;
-      })
-
       setTimeout((res) => {
-        this.msgshow = true
-        this.msgtext = "这里是消息"
+        this.show = true;
       }, 10000)
-
-      this.$bus.$on('msg:show', (res) => {
-
-      })
-
-      this.$bus.$on('msg:hide', (res) => {
-        this.msgshow = false;
-      })
-
     },
     watch: {},
     methods: {}
@@ -75,6 +32,7 @@
 
 <style lang="scss">
   @import "common/base";
+
   #app {
     position: fixed;
     background-color: map_get($colors, bg);
