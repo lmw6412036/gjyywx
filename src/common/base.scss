@@ -1,5 +1,4 @@
 @import "font";
-
 * {
   font-size: 0.875rem;
   margin: 0;
@@ -9,7 +8,9 @@
 li{
   list-style: none;
 }
-
+select,button{
+  -webkit-appearance: none;
+}
 /******class******/
 .tac{
   text-align: center;

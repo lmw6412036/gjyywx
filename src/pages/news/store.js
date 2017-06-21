@@ -1,24 +1,25 @@
 /**
  * Created by Administrator on 2017/6/8 0008.
  */
-const news_t = "news_t"
+const news_list = "news_list"
+const news_list_total = "news_list_total"
 
 export default {
   state: {
-    t: 1
+    list: []
   },
   mutations: {
-    [news_t](state, payload){
+    [news_list](state, payload){
       state.t = state.t + payload;
     }
   },
   actions: {
-    [news_t]({commit}, payload){
-      commit(news_t, payload);
+    [news_list]({commit}, payload){
+      commit(news_list, payload);
     }
   },
   getters: {
-    tt(state){
+    [news_list_total](state){
       return state.t + 2;
     }
   }

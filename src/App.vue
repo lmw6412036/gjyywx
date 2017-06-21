@@ -32,7 +32,6 @@
 
 <style lang="scss">
   @import "common/base";
-
   #app {
     position: fixed;
     background-color: map_get($colors, bg);

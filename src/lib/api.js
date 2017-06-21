@@ -8,19 +8,15 @@ let random = "";
 for (let i = 0; i < 4; i++) {
   random += "1234567890".substr(Math.floor(Math.random() * 10), 1);
 }
-let sign = hex_md5(hex_md5("aAr9MVS9j1") + spid + random);
 
 let base = {
   channel: 4,
   format: "JSON",
   oper: "127.0.0.1",
   spid: spid,
-  random: random,
-  sign: sign
+  random: random
 };
-let config = {
-  headers: {"Content-Type": "application/json"},
-}
+
 
 export default function (service, options) {
   if (typeof options.showloading == "undefined") {
@@ -29,7 +25,16 @@ export default function (service, options) {
   if (options.showloading) {
     bus.$emit("loading", {status: 'start'});
   }
-  return axios.post(url, {...base, ...options, service}, config)
+  var fdata={...base, ...options, service};
+  //console.log(fdata);
+  let sign = hex_md5(hex_md5("aAr9MVS9j1") + JSON.stringify(fdata));
+  //fdata.sign=sign;
+  let config = {
+    headers: {
+      sign:sign,
+      "Content-Type": "application/json"},
+  }
+  return axios.post(url, fdata,config)
     .then((res) => {
       bus.$emit("loading", {status: 'stop'});
       if (res.status == 200) {

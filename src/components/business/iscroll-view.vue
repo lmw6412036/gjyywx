@@ -2,8 +2,6 @@
   <div class="view iscroll viewpage">
     <slot name="pullup">
       <div class="pullup tac">
-        <font class="font"></font>
-        <span class="normal">松开刷新</span>
       </div>
     </slot>
     <div ref="iscroll" class="wrapper view">
@@ -14,8 +12,6 @@
     </slot>
   </div>
 </template>
-
-
 <script>
   import "iscroll";
   export default {
