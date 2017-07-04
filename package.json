@@ -2,7 +2,7 @@
     "name": "gjyywx",
     "version": "1.0.14",
     "description": "gjyywx",
-    "author": "lmw",
+    "author": "lkf",
     "private": true,
     "scripts": {
         "dev": "node build/dev-server.js",
