@@ -24,23 +24,16 @@
       IscrollView},
     mounted() {
         this._getData();
-        this._getList();
+      console.log(weui.alert('11111'))
     },
     beforeDestroy() {
 
     },
     methods: {
         async _getData(){
-            try{
-
-            }
-            catch (e){
-
-            }
-
+          let data=await Api("nethos.system.web.pat.index",{})
           console.log(data);
         },
-      async _getList(){},
         pulldown(){
             alert(1);
         }

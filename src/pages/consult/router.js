@@ -3,6 +3,7 @@
  */
 export default [{
   path: '/consult',
+  name:'consult',
   component: resolve => {
     require(['./index.vue'], resolve)
   }
