@@ -17,7 +17,7 @@
       AppHeader, AppFooter
     },
     mounted() {
-
+		console.log(7897979)
     },
     beforeDestroy() {
 
