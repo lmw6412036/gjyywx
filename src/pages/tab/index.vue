@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import AppHeader from "../../components/base/app-header.vue"
-  import AppFooter from "../../components/base/app-footer.vue"
+  import AppHeader from "../../components/business/app-header.vue"
+  import AppFooter from "../../components/business/app-footer.vue"
   export default {
     data() {
       return {};
@@ -17,7 +17,7 @@
       AppHeader, AppFooter
     },
     mounted() {
-		console.log(7897979)
+
     },
     beforeDestroy() {
 

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import AppHeader from "../../../components/base/app-header.vue"
+  import AppHeader from "../../../components/business/app-header.vue"
   export default {
     components: {
       AppHeader

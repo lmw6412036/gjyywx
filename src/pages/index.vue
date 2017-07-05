@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  import IscrollView from "../components/base/iscroll-view.vue"
-  import SwiperView from "../components/base/swiper-view.vue"
+  import IscrollView from "../components/business/iscroll-view.vue"
+  import SwiperView from "../components/business/swiper-view.vue"
   export default {
     data() {
       return {};

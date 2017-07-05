@@ -8,6 +8,8 @@ import user from "../pages/ucenter/store"
 import consult from "../pages/consult/store"
 
 Vue.use(Vuex);
+
+
 export default new Vuex.Store({
   modules: {
     news, consult, user

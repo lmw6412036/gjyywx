@@ -5,19 +5,20 @@ import News from '../pages/news/router'
 import Service from '../pages/service/router'
 import User from "../pages/ucenter/router"
 import Tab from "../pages/tab/router"
-
+import Login from "../pages/login/router"
 Vue.use(Router)
 
 export default new Router({
     routes: [
         {
             path: '/',
-            redirect:"/tab/news"
+            redirect:"/login"
         },
         ...Consult,
         ...Service,
         ...News,
         ...User,
-        ...Tab
+        ...Tab,
+        ...Login
     ]
 })
